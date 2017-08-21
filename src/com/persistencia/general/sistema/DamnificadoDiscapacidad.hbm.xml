@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.general.sistema.DamnificadoDiscapacidad" optimistic-lock="version" table="damnificado_discapacidad">
+    <composite-id class="com.persistencia.general.sistema.DamnificadoDiscapacidadId" name="id">
+      <key-property name="damId" type="java.lang.Long">
+        <column name="DAM_ID"/>
+      </key-property>
+      <key-property name="disId" type="java.lang.Long">
+        <column name="DIS_ID"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.persistencia.damnificado.AlbDamnificado" fetch="select" insert="false" name="albDamnificado" update="false">
+      <column name="DAM_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbDiscapacidad" fetch="select" insert="false" name="albDiscapacidad" update="false">
+      <column name="DIS_ID"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

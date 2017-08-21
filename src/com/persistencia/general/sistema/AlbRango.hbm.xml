@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.general.sistema.AlbRango" optimistic-lock="version" table="alb_rango">
+    <id name="ranId" type="java.lang.Long">
+      <column name="RAN_ID"/>
+      <generator class="identity"/>
+    </id>
+    <property name="ranRango" type="string">
+      <column length="100" name="RAN_RANGO"/>
+    </property>
+    <property name="ranEstado" type="java.lang.Integer">
+      <column name="RAN_ESTADO"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="albPersonalAdministrativos" table="alb_personal_administrativo">
+      <key>
+        <column name="RAN_ID"/>
+      </key>
+      <one-to-many class="com.persistencia.seguridad.sistema.AlbPersonalAdministrativo"/>
+    </set>
+  </class>
+</hibernate-mapping>

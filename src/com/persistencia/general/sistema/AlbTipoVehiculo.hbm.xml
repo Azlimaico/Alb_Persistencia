@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.general.sistema.AlbTipoVehiculo" optimistic-lock="version" table="alb_tipo_vehiculo">
+    <id name="tivId" type="java.lang.Long">
+      <column name="TIV_ID"/>
+      <generator class="identity"/>
+    </id>
+    <property name="tivNombre" type="string">
+      <column length="100" name="TIV_NOMBRE"/>
+    </property>
+    <property name="tivEstado" type="java.lang.Integer">
+      <column name="TIV_ESTADO"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="albVehiculos" table="alb_vehiculo">
+      <key>
+        <column name="TIV_ID"/>
+      </key>
+      <one-to-many class="com.persistencia.general.sistema.AlbVehiculo"/>
+    </set>
+  </class>
+</hibernate-mapping>

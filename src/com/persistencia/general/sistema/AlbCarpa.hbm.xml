@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.general.sistema.AlbCarpa" optimistic-lock="version" table="alb_carpa">
+    <id name="carId" type="java.lang.Long">
+      <column name="CAR_ID"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="com.persistencia.albergue.AlbAlbergue" fetch="select" name="albAlbergue">
+      <column name="ALB_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbTipoCarpa" fetch="select" name="albTipoCarpa">
+      <column name="TIC_ID"/>
+    </many-to-one>
+    <property name="carTotal" type="java.lang.Integer">
+      <column name="CAR_TOTAL"/>
+    </property>
+    <property name="carDisponibles" type="java.lang.Integer">
+      <column name="CAR_DISPONIBLES"/>
+    </property>
+    <property name="carEstado" type="java.lang.Integer">
+      <column name="CAR_ESTADO"/>
+    </property>
+  </class>
+</hibernate-mapping>

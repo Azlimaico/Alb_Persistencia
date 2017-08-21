@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class  name="com.persistencia.general.sistema.AlbProfesion" optimistic-lock="version" table="alb_profesion">
+    <id name="prfId" type="java.lang.Long">
+      <column name="PRF_ID"/>
+      <generator class="identity"/>
+    </id>
+    <property name="prfProfesion" type="string">
+      <column length="100" name="PRF_PROFESION"/>
+    </property>
+    <property name="prfEstado" type="java.lang.Integer">
+      <column name="PRF_ESTADO"/>
+    </property>
+ 
+  </class>
+</hibernate-mapping>

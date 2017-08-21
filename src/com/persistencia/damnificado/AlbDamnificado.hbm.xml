@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.damnificado.AlbDamnificado" optimistic-lock="version" table="alb_damnificado">
+    <id name="damId" type="java.lang.Long">
+      <column name="DAM_ID"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="com.persistencia.general.sistema.AlbDiscapacidad" fetch="select" name="albDiscapacidad">
+      <column name="DIS_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbEstadoCivil" fetch="select" name="albEstadoCivil">
+      <column name="ECI_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbFamilia" fetch="select" name="albFamilia">
+      <column name="FAM_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbInstruccion" fetch="select" name="albInstruccion">
+      <column name="INS_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbProfesion" fetch="select" name="albProfesion">
+      <column name="PRF_ID"/>
+    </many-to-one>
+    <property name="damNombres" type="string">
+      <column length="100" name="DAM_NOMBRES"/>
+    </property>
+    <property name="damApellidos" type="string">
+      <column length="100" name="DAM_APELLIDOS"/>
+    </property>
+    <property name="damCedula" type="java.lang.Integer">
+      <column name="DAM_CEDULA"/>
+    </property>
+    <property name="damSexo" type="java.lang.Integer">
+      <column name="DAM_SEXO"/>
+    </property>
+    <property name="damLugarNacimiento" type="string">
+      <column length="100" name="DAM_LUGAR_NACIMIENTO"/>
+    </property>
+    <property name="damFechaNacimiento" type="date">
+      <column length="10" name="DAM_FECHA_NACIMIENTO"/>
+    </property>
+    <property name="damDireccionDomicilio" type="string">
+      <column length="100" name="DAM_DIRECCION_DOMICILIO"/>
+    </property>
+    <property name="damDatosPadre" type="string">
+      <column length="100" name="DAM_DATOS_PADRE"/>
+    </property>
+    <property name="damDatosMadre" type="string">
+      <column length="100" name="DAM_DATOS_MADRE"/>
+    </property>
+    <property name="damCelular" type="java.lang.Integer">
+      <column name="DAM_CELULAR"/>
+    </property>
+    <property name="damEmail" type="string">
+      <column length="100" name="DAM_EMAIL"/>
+    </property>
+    <property name="damEmbarazo" type="java.lang.Integer">
+      <column name="DAM_EMBARAZO"/>
+    </property>
+    <property name="damObservaciones" type="string">
+      <column length="200" name="DAM_OBSERVACIONES"/>
+    </property>
+    <property name="damEstado" type="java.lang.Integer">
+      <column name="DAM_ESTADO"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="damnificadoAlbergues" table="damnificado_albergue">
+      <key>
+        <column name="DAM_ID"/>
+      </key>
+      <one-to-many class="com.persistencia.albergue.DamnificadoAlbergue"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="damnificadoDiscapacidads" table="damnificado_discapacidad">
+      <key>
+        <column name="DAM_ID"/>
+      </key>
+      <one-to-many class="com.persistencia.general.sistema.DamnificadoDiscapacidad"/>
+    </set>
+  </class>
+</hibernate-mapping>

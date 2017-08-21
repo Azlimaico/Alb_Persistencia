@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.general.sistema.AlbTipoCarpa" optimistic-lock="version" table="alb_tipo_carpa">
+    <id name="ticId" type="java.lang.Long">
+      <column name="TIC_ID"/>
+      <generator class="identity"/>
+    </id>
+    <property name="ticNombre" type="string">
+      <column length="100" name="TIC_NOMBRE"/>
+    </property>
+    <property name="ticEstado" type="java.lang.Integer">
+      <column name="TIC_ESTADO"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="albCarpas" table="alb_carpa">
+      <key>
+        <column name="TIC_ID"/>
+      </key>
+      <one-to-many class="com.persistencia.general.sistema.AlbCarpa"/>
+    </set>
+  </class>
+</hibernate-mapping>

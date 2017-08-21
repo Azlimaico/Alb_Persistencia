@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.seguridad.sistema.AlbPersonalAdministrativo" optimistic-lock="version" table="alb_personal_administrativo">
+    <id name="peaId" type="java.lang.Long">
+      <column name="PEA_ID"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="com.persistencia.general.sistema.AlbEstadoCivil" fetch="select" name="albEstadoCivil">
+      <column name="ECI_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbFuerza" fetch="select" name="albFuerza">
+      <column name="FUE_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbProfesion" fetch="select" name="albProfesion">
+      <column name="PRF_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbRango" fetch="select" name="albRango">
+      <column name="RAN_ID"/>
+    </many-to-one>
+    <property name="peaFecha" type="date">
+      <column length="10" name="PEA_FECHA"/>
+    </property>
+    <property name="peaNombres" type="string">
+      <column length="100" name="PEA_NOMBRES"/>
+    </property>
+    <property name="peaApellidos" type="string">
+      <column length="100" name="PEA_APELLIDOS"/>
+    </property>
+    <property name="peaCedula" type="java.lang.Integer">
+      <column name="PEA_CEDULA"/>
+    </property>
+    <property name="peaSexo" type="java.lang.Integer">
+      <column name="PEA_SEXO"/>
+    </property>
+    <property name="peaLugarNacimiento" type="string">
+      <column length="100" name="PEA_LUGAR_NACIMIENTO"/>
+    </property>
+    <property name="peaFechaNacimiento" type="date">
+      <column length="10" name="PEA_FECHA_NACIMIENTO"/>
+    </property>
+    <property name="peaCelular" type="java.lang.Integer">
+      <column name="PEA_CELULAR"/>
+    </property>
+    <property name="peaEmail" type="string">
+      <column length="100" name="PEA_EMAIL"/>
+    </property>
+    <property name="peaObservaciones" type="string">
+      <column length="200" name="PEA_OBSERVACIONES"/>
+    </property>
+    <property name="peaEstado" type="java.lang.Integer">
+      <column name="PEA_ESTADO"/>
+    </property>
+  </class>
+</hibernate-mapping>

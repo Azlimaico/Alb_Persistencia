@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.albergue.PartediarioAlbergue" optimistic-lock="version" table="partediario_albergue">
+    <composite-id class="com.persistencia.albergue.PartediarioAlbergueId" name="id">
+      <key-property name="padId" type="java.lang.Long">
+        <column name="PAD_ID"/>
+      </key-property>
+      <key-property name="albId" type="java.lang.Long">
+        <column name="ALB_ID"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.persistencia.albergue.AlbAlbergue" fetch="select" insert="false" name="albAlbergue" update="false">
+      <column name="ALB_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbParteDiario" fetch="select" insert="false" name="albParteDiario" update="false">
+      <column name="PAD_ID"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

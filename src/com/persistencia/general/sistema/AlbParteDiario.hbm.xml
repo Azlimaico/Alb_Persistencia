@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.general.sistema.AlbParteDiario" optimistic-lock="version" table="alb_parte_diario">
+    <id name="padId" type="java.lang.Long">
+      <column name="PAD_ID"/>
+      <generator class="identity"/>
+    </id>
+    <property name="padFecha" type="date">
+      <column length="10" name="PAD_FECHA"/>
+    </property>
+    <property name="padFechaIncidencia" type="date">
+      <column length="10" name="PAD_FECHA_INCIDENCIA"/>
+    </property>
+    <property name="padMilitDisponibles" type="java.lang.Integer">
+      <column name="PAD_MILIT_DISPONIBLES"/>
+    </property>
+    <property name="padMilitLicencia" type="java.lang.Integer">
+      <column name="PAD_MILIT_LICENCIA"/>
+    </property>
+    <property name="padMilitPermiso" type="java.lang.Integer">
+      <column name="PAD_MILIT_PERMISO"/>
+    </property>
+    <property name="padMilitDescansoOp" type="java.lang.Integer">
+      <column name="PAD_MILIT_DESCANSO_OP"/>
+    </property>
+    <property name="padMilitSeguridad" type="java.lang.Integer">
+      <column name="PAD_MILIT_SEGURIDAD"/>
+    </property>
+    <property name="padAdultos" type="java.lang.Integer">
+      <column name="PAD_ADULTOS"/>
+    </property>
+    <property name="padAdolescentes" type="java.lang.Integer">
+      <column name="PAD_ADOLESCENTES"/>
+    </property>
+    <property name="padNinos" type="java.lang.Integer">
+      <column name="PAD_NINOS"/>
+    </property>
+    <property name="padAncianos" type="java.lang.Integer">
+      <column name="PAD_ANCIANOS"/>
+    </property>
+    <property name="padDiscapacitados" type="java.lang.Integer">
+      <column name="PAD_DISCAPACITADOS"/>
+    </property>
+    <property name="padObservaciones" type="string">
+      <column length="200" name="PAD_OBSERVACIONES"/>
+    </property>
+    <property name="padEstado" type="java.lang.Integer">
+      <column name="PAD_ESTADO"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="partediarioAlbergues" table="partediario_albergue">
+      <key>
+        <column name="PAD_ID"/>
+      </key>
+      <one-to-many class="com.persistencia.albergue.PartediarioAlbergue"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.general.sistema.AlbVehiculo" optimistic-lock="version" table="alb_vehiculo">
+    <id name="vehId" type="java.lang.Long">
+      <column name="VEH_ID"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="com.persistencia.albergue.AlbAlbergue" fetch="select" name="albAlbergue">
+      <column name="ALB_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.general.sistema.AlbTipoVehiculo" fetch="select" name="albTipoVehiculo">
+      <column name="TIV_ID"/>
+    </many-to-one>
+    <property name="vehCantidad" type="java.lang.Integer">
+      <column name="VEH_CANTIDAD"/>
+    </property>
+    <property name="vehKm" type="java.lang.Float">
+      <column name="VEH_KM" precision="12" scale="0"/>
+    </property>
+    <property name="vehConductores" type="string">
+      <column length="100" name="VEH_CONDUCTORES"/>
+    </property>
+    <property name="vehEstado" type="java.lang.Integer">
+      <column name="VEH_ESTADO"/>
+    </property>
+  </class>
+</hibernate-mapping>

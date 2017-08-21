@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.persistencia.general.sistema.AlbParroquia" optimistic-lock="version" table="alb_parroquia">
+        <id name="parId" type="java.lang.Long">
+            <column name="PAR_ID"/>
+            <generator class="identity"/>
+        </id>
+        <property name="parNombre" type="string">
+            <column length="100" name="PAR_NOMBRE"/>
+        </property>
+        <property name="parEstado" type="java.lang.Integer">
+            <column name="PAR_ESTADO"/>
+        </property>
+    
+        <many-to-one class="com.persistencia.general.sistema.AlbCanton" fetch="select" name="albCanton">
+            <column name="CAN_ID"/>
+        </many-to-one>
+        
+        <set fetch="select" inverse="true" lazy="true" name="albAlbergues" table="alb_albergue">
+            <key>
+                <column name="PAR_ID"/>
+            </key>
+            <one-to-many class="com.persistencia.albergue.AlbAlbergue"/>
+        </set>
+    
+    
+          
+    
+    
+    </class>
+</hibernate-mapping>

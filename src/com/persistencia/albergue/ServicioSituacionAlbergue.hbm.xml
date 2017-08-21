@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.albergue.ServicioSituacionAlbergue" optimistic-lock="version" table="servicio_situacion_albergue">
+    <id name="serAlbId" type="java.lang.Long">
+      <column name="SER_ALB_ID"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="com.persistencia.albergue.AlbAlbergue" fetch="select" name="albAlbergue">
+      <column name="ALB_ID"/>
+    </many-to-one>
+    <many-to-one class="com.persistencia.albergue.servicio.AlbServicio" fetch="select" name="albServicio">
+      <column name="SER_ID"/>
+    </many-to-one>
+    <set fetch="select" inverse="true" lazy="true" name="albSituacions" table="alb_situacion">
+      <key>
+        <column name="SER_ALB_ID"/>
+      </key>
+      <one-to-many class="com.persistencia.albergue.servicio.AlbSituacion"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="com.persistencia.albergue.servicio.AlbSituacion" optimistic-lock="version" table="alb_situacion">
+    <id name="sitId" type="java.lang.Long">
+      <column name="SIT_ID"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="com.persistencia.albergue.ServicioSituacionAlbergue" fetch="select" name="servicioSituacionAlbergue">
+      <column name="SER_ALB_ID"/>
+    </many-to-one>
+    <property name="sitMetProvision" type="string">
+      <column length="100" name="SIT_MET_PROVISION"/>
+    </property>
+    <property name="sitAlmacenamiento" type="string">
+      <column length="100" name="SIT_ALMACENAMIENTO"/>
+    </property>
+    <property name="sitProveedorServicio" type="string">
+      <column length="100" name="SIT_PROVEEDOR_SERVICIO"/>
+    </property>
+    <property name="sitAguaBebible" type="string">
+      <column length="100" name="SIT_AGUA_BEBIBLE"/>
+    </property>
+    <property name="sitAlcanceServicio" type="string">
+      <column length="100" name="SIT_ALCANCE_SERVICIO"/>
+    </property>
+    <property name="sitServicioLavanderias" type="string">
+      <column length="100" name="SIT_SERVICIO_LAVANDERIAS"/>
+    </property>
+    <property name="sitAlcantarillado" type="string">
+      <column length="100" name="SIT_ALCANTARILLADO"/>
+    </property>
+    <property name="sitSanitarioFijoHombres" type="java.lang.Integer">
+      <column name="SIT_SANITARIO_FIJO_HOMBRES"/>
+    </property>
+    <property name="sitSanitarioFijoMujeres" type="java.lang.Integer">
+      <column name="SIT_SANITARIO_FIJO_MUJERES"/>
+    </property>
+    <property name="sitSanitarioMovilIndividualHombres" type="java.lang.Integer">
+      <column name="SIT_SANITARIO_MOVIL_INDIVIDUAL_HOMBRES"/>
+    </property>
+    <property name="sitSanitarioMovilIndividualMujeres" type="java.lang.Integer">
+      <column name="SIT_SANITARIO_MOVIL_INDIVIDUAL_MUJERES"/>
+    </property>
+    <property name="sitSanitarioMovilContinerHombres" type="java.lang.Integer">
+      <column name="SIT_SANITARIO_MOVIL_CONTINER_HOMBRES"/>
+    </property>
+    <property name="sitSanitarioMovilConteinerMujeres" type="java.lang.Integer">
+      <column name="SIT_SANITARIO_MOVIL_CONTEINER_MUJERES"/>
+    </property>
+    <property name="sitLetrinaFijaHombres" type="java.lang.Integer">
+      <column name="SIT_LETRINA_FIJA_HOMBRES"/>
+    </property>
+    <property name="sitLetrinaFijaMujeres" type="java.lang.Integer">
+      <column name="SIT_LETRINA_FIJA_MUJERES"/>
+    </property>
+    <property name="sitLetrinaMovilHombres" type="java.lang.Integer">
+      <column name="SIT_LETRINA_MOVIL_HOMBRES"/>
+    </property>
+    <property name="sitLetrinaMovilMujeres" type="java.lang.Integer">
+      <column name="SIT_LETRINA_MOVIL_MUJERES"/>
+    </property>
+    <property name="sitSanitarioDiscapacitadoHom" type="java.lang.Integer">
+      <column name="SIT_SANITARIO_DISCAPACITADO_HOM"/>
+    </property>
+    <property name="sitSanitarioDiscapacitadoMuj" type="java.lang.Integer">
+      <column name="SIT_SANITARIO_DISCAPACITADO_MUJ"/>
+    </property>
+    <property name="sitDuchasHombres" type="java.lang.Integer">
+      <column name="SIT_DUCHAS_HOMBRES"/>
+    </property>
+    <property name="sitDuchasMujeres" type="java.lang.Integer">
+      <column name="SIT_DUCHAS_MUJERES"/>
+    </property>
+    <property name="sitDuchasDiscapacitadosHom" type="java.lang.Integer">
+      <column name="SIT_DUCHAS_DISCAPACITADOS_HOM"/>
+    </property>
+    <property name="sitDuchasDiscapacitadosMuj" type="java.lang.Integer">
+      <column name="SIT_DUCHAS_DISCAPACITADOS_MUJ"/>
+    </property>
+    <property name="sitInstalacionDisponible" type="string">
+      <column length="100" name="SIT_INSTALACION_DISPONIBLE"/>
+    </property>
+    <property name="sitTipoInstalacion" type="string">
+      <column length="100" name="SIT_TIPO_INSTALACION"/>
+    </property>
+    <property name="sitMetodoServicio" type="string">
+      <column length="100" name="SIT_METODO_SERVICIO"/>
+    </property>
+    <property name="sitMetodoEvacuacion" type="string">
+      <column length="100" name="SIT_METODO_EVACUACION"/>
+    </property>
+    <property name="sitCombustibleEmpleado" type="string">
+      <column length="100" name="SIT_COMBUSTIBLE_EMPLEADO"/>
+    </property>
+    <property name="sitMediosEmpleados" type="string">
+      <column length="100" name="SIT_MEDIOS_EMPLEADOS"/>
+    </property>
+    <property name="sitDescripcion" type="string">
+      <column length="100" name="SIT_DESCRIPCION"/>
+    </property>
+    <property name="sitEstado" type="java.lang.Integer">
+      <column name="SIT_ESTADO"/>
+    </property>
+  </class>
+</hibernate-mapping>

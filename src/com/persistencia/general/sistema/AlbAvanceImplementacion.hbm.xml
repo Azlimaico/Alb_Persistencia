@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.persistencia.general.sistema.AlbAvanceImplementacion" table="alb_avance_implementacion" optimistic-lock="version">
+        <id name="avaId" type="java.lang.Long">
+            <column name="AVA_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="avaNombre" type="string">
+            <column name="AVA_NOMBRE" length="100" />
+        </property>
+        <property name="avaEstado" type="java.lang.Integer">
+            <column name="AVA_ESTADO" />
+        </property>
+        <set name="albAlbergues" table="alb_albergue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AVA_ID" />
+            </key>
+            <one-to-many class="com.persistencia.albergue.AlbAlbergue" />
+        </set>
+    </class>
+</hibernate-mapping>
