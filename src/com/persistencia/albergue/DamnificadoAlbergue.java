@@ -25,11 +25,11 @@ public class DamnificadoAlbergue  implements java.io.Serializable {
        this.albAlbergue = albAlbergue;
        this.albDamnificado = albDamnificado;
     }
-   
+     
     public DamnificadoAlbergueId getId() {
         return this.id;
     }
-    
+ 
     public void setId(DamnificadoAlbergueId id) {
         this.id = id;
     }
