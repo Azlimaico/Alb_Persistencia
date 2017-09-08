@@ -2,6 +2,7 @@ package com.persistencia.albergue;
 // Generated 03/06/2017 12:49:18 by Hibernate Tools 4.3.1
 
 
+import com.persistencia.damnificado.AlbDamnificado;
 import com.persistencia.general.sistema.AlbProvincia;
 import com.persistencia.general.sistema.AlbParroquia;
 import com.persistencia.general.sistema.AlbCanton;
@@ -187,7 +188,7 @@ public class AlbAlbergue  implements java.io.Serializable {
 
 
 
-
+    
 }
 
 

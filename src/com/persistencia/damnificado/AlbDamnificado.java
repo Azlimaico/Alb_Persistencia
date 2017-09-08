@@ -1,6 +1,7 @@
 package com.persistencia.damnificado;
 // Generated 03/06/2017 12:49:18 by Hibernate Tools 4.3.1
 
+import com.persistencia.albergue.AlbAlbergue;
 import com.persistencia.general.sistema.AlbDiscapacidad;
 import com.persistencia.general.sistema.AlbEstadoCivil;
 import com.persistencia.general.sistema.AlbFamilia;
@@ -38,7 +39,7 @@ public class AlbDamnificado  implements java.io.Serializable {
      private Integer damEmbarazo;
      private String damObservaciones;
      private Integer damEstado;
-     private Set damnificadoAlbergues = new HashSet(0);
+     private Set<AlbDamnificado> damnificadoAlbergues = new HashSet <AlbDamnificado>(0);
      private Set damnificadoDiscapacidads = new HashSet(0);
 
     public AlbDamnificado() {

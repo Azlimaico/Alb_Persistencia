@@ -64,12 +64,15 @@
     <property name="damEstado" type="java.lang.Integer">
       <column name="DAM_ESTADO"/>
     </property>
-    <set fetch="select" inverse="true" lazy="true" name="damnificadoAlbergues" table="damnificado_albergue">
+    <set name="damnificadoAlbergues" table="damnificado_albergue" fetch="select" inverse="true" lazy="true"  >
       <key>
         <column name="DAM_ID"/>
       </key>
-      <one-to-many class="com.persistencia.albergue.DamnificadoAlbergue"/>
+      <many-to-many entity-name="com.persistencia.albergue.AlbAlbergue">
+         <column name="ALB_ID"/>
+      </many-to-many> 
     </set>
+    
     <set fetch="select" inverse="true" lazy="true" name="damnificadoDiscapacidads" table="damnificado_discapacidad">
       <key>
         <column name="DAM_ID"/>
