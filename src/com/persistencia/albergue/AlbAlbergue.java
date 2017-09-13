@@ -29,10 +29,12 @@ public class AlbAlbergue  implements java.io.Serializable {
      private Float albCoordy;
      private String albObservaciones;
      private int albEstado;
+     
+     private Set<AlbDamnificado> damnificadoAlbergues = new HashSet <AlbDamnificado>();
+     
      private Set albCarpas = new HashSet(0);
      private Set albVehiculos = new HashSet(0);
      private Set partediarioAlbergues = new HashSet(0);
-     private Set damnificadoAlbergues = new HashSet(0);
      private Set servicioSituacionAlbergues = new HashSet(0);
 
     public AlbAlbergue() {
@@ -163,11 +165,12 @@ public class AlbAlbergue  implements java.io.Serializable {
     public void setPartediarioAlbergues(Set partediarioAlbergues) {
         this.partediarioAlbergues = partediarioAlbergues;
     }
-    public Set getDamnificadoAlbergues() {
-        return this.damnificadoAlbergues;
+
+    public Set<AlbDamnificado> getDamnificadoAlbergues() {
+        return damnificadoAlbergues;
     }
-    
-    public void setDamnificadoAlbergues(Set damnificadoAlbergues) {
+
+    public void setDamnificadoAlbergues(Set<AlbDamnificado> damnificadoAlbergues) {
         this.damnificadoAlbergues = damnificadoAlbergues;
     }
     public Set getServicioSituacionAlbergues() {
@@ -186,6 +189,10 @@ public class AlbAlbergue  implements java.io.Serializable {
         this.albEstado = albEstado;
     }
 
+    public void addDamnificado(AlbDamnificado damnificado) {
+        this.damnificadoAlbergues.add(damnificado);
+    }
+ 
 
 
     

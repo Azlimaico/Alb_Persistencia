@@ -7,6 +7,9 @@
       <column name="SER_ID"/>
       <generator class="identity"/>
     </id>
+    <many-to-one class="com.persistencia.general.sistema.AlbEmpresa" fetch="select" name="albEmpresa">
+      <column name="EMP_ID"/>
+    </many-to-one>
     <property name="serNombre" type="string">
       <column length="100" name="SER_NOMBRE"/>
     </property>

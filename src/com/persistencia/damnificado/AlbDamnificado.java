@@ -39,7 +39,7 @@ public class AlbDamnificado  implements java.io.Serializable {
      private Integer damEmbarazo;
      private String damObservaciones;
      private Integer damEstado;
-     private Set<AlbDamnificado> damnificadoAlbergues = new HashSet <AlbDamnificado>(0);
+     private Set<AlbAlbergue> damnificadoAlbergues = new HashSet <AlbAlbergue>();
      private Set damnificadoDiscapacidads = new HashSet(0);
 
     public AlbDamnificado() {
@@ -209,13 +209,15 @@ public class AlbDamnificado  implements java.io.Serializable {
     public void setDamEstado(Integer damEstado) {
         this.damEstado = damEstado;
     }
-    public Set getDamnificadoAlbergues() {
-        return this.damnificadoAlbergues;
+
+    public Set<AlbAlbergue> getDamnificadoAlbergues() {
+        return damnificadoAlbergues;
     }
-    
-    public void setDamnificadoAlbergues(Set damnificadoAlbergues) {
+
+    public void setDamnificadoAlbergues(Set<AlbAlbergue> damnificadoAlbergues) {
         this.damnificadoAlbergues = damnificadoAlbergues;
     }
+   
     public Set getDamnificadoDiscapacidads() {
         return this.damnificadoDiscapacidads;
     }
@@ -223,7 +225,9 @@ public class AlbDamnificado  implements java.io.Serializable {
     public void setDamnificadoDiscapacidads(Set damnificadoDiscapacidads) {
         this.damnificadoDiscapacidads = damnificadoDiscapacidads;
     }
-
+ public void addAlbergue(AlbAlbergue albergue) {
+        this.damnificadoAlbergues.add(albergue);
+    }
 
 
 

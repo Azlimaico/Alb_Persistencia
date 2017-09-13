@@ -2,6 +2,7 @@ package com.persistencia.albergue.servicio;
 // Generated 03/06/2017 12:49:18 by Hibernate Tools 4.3.1
 
 
+import com.persistencia.general.sistema.AlbEmpresa;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,6 +10,7 @@ public class AlbServicio  implements java.io.Serializable {
 
 
      private Long serId;
+     private AlbEmpresa albEmpresa;
      private String serNombre;
      private Integer serEstado;
      private Set servicioSituacionAlbergues = new HashSet(0);
@@ -51,9 +53,15 @@ public class AlbServicio  implements java.io.Serializable {
         this.servicioSituacionAlbergues = servicioSituacionAlbergues;
     }
 
+    public AlbEmpresa getAlbEmpresa() {
+        return albEmpresa;
+    }
 
+    public void setAlbEmpresa(AlbEmpresa albEmpresa) {
+        this.albEmpresa = albEmpresa;
+    }
 
-
+    
 }
 
 

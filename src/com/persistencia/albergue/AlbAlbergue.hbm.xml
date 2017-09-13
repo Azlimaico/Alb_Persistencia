@@ -43,14 +43,11 @@
         <property name="albEstado" type="int">
             <column length="2" name="ALB_ESTADO"/>
         </property>
-    
+          
+        
         <set fetch="select" inverse="false" lazy="true" name="damnificadoAlbergues" table="damnificado_albergue" cascade="all">
-            <key>
-                <column name="ALB_ID"/>
-            </key>
-            <many-to-many entity-name="com.persistencia.damnificado.AlbDamnificado"> 
-               <column name="DAM_ID"/>
-            </many-to-many>
+            <key column="ALB_ID"/>
+            <many-to-many column="DAM_ID" class="com.persistencia.damnificado.AlbDamnificado" />
         </set>
   
     </class>
