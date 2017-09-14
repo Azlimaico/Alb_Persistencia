@@ -15,6 +15,7 @@ public class ServicioSituacionAlbergue  implements java.io.Serializable {
      private Long serAlbId;
      private AlbAlbergue albAlbergue;
      private AlbServicio albServicio;
+     private int serAlbEstado;
      private Set albSituacions = new HashSet(0);
 
     public ServicioSituacionAlbergue() {
@@ -53,6 +54,14 @@ public class ServicioSituacionAlbergue  implements java.io.Serializable {
     
     public void setAlbSituacions(Set albSituacions) {
         this.albSituacions = albSituacions;
+    }
+
+    public int getSerAlbEstado() {
+        return serAlbEstado;
+    }
+
+    public void setSerAlbEstado(int serAlbEstado) {
+        this.serAlbEstado = serAlbEstado;
     }
 
 
