@@ -15,10 +15,11 @@ public class AlbSituacion  implements java.io.Serializable {
      private Long sitId;
      private ServicioSituacionAlbergue servicioSituacionAlbergue;
      private String sitMetProvision;
+     private String sitMetProvisionInternet;
      private String sitAlmacenamiento;
-     private String sitProveedorServicio;
      private String sitAguaBebible;
      private String sitAlcanceServicio;
+     private String sitAlcanceInternet;
      private String sitServicioLavanderias;
      private String sitAlcantarillado;
      private Integer sitSanitarioFijoHombres;
@@ -49,11 +50,10 @@ public class AlbSituacion  implements java.io.Serializable {
     public AlbSituacion() {
     }
 
-    public AlbSituacion(ServicioSituacionAlbergue servicioSituacionAlbergue, String sitMetProvision, String sitAlmacenamiento, String sitProveedorServicio, String sitAguaBebible, String sitAlcanceServicio, String sitServicioLavanderias, String sitAlcantarillado, Integer sitSanitarioFijoHombres, Integer sitSanitarioFijoMujeres, Integer sitSanitarioMovilIndividualHombres, Integer sitSanitarioMovilIndividualMujeres, Integer sitSanitarioMovilContinerHombres, Integer sitSanitarioMovilConteinerMujeres, Integer sitLetrinaFijaHombres, Integer sitLetrinaFijaMujeres, Integer sitLetrinaMovilHombres, Integer sitLetrinaMovilMujeres, Integer sitSanitarioDiscapacitadoHom, Integer sitSanitarioDiscapacitadoMuj, Integer sitDuchasHombres, Integer sitDuchasMujeres, Integer sitDuchasDiscapacitadosHom, Integer sitDuchasDiscapacitadosMuj, String sitInstalacionDisponible, String sitTipoInstalacion, String sitMetodoServicio, String sitMetodoEvacuacion, String sitCombustibleEmpleado, String sitMediosEmpleados, String sitDescripcion, Integer sitEstado) {
+    public AlbSituacion(ServicioSituacionAlbergue servicioSituacionAlbergue, String sitMetProvision, String sitAlmacenamiento, String sitAguaBebible, String sitAlcanceServicio, String sitServicioLavanderias, String sitAlcantarillado, Integer sitSanitarioFijoHombres, Integer sitSanitarioFijoMujeres, Integer sitSanitarioMovilIndividualHombres, Integer sitSanitarioMovilIndividualMujeres, Integer sitSanitarioMovilContinerHombres, Integer sitSanitarioMovilConteinerMujeres, Integer sitLetrinaFijaHombres, Integer sitLetrinaFijaMujeres, Integer sitLetrinaMovilHombres, Integer sitLetrinaMovilMujeres, Integer sitSanitarioDiscapacitadoHom, Integer sitSanitarioDiscapacitadoMuj, Integer sitDuchasHombres, Integer sitDuchasMujeres, Integer sitDuchasDiscapacitadosHom, Integer sitDuchasDiscapacitadosMuj, String sitInstalacionDisponible, String sitTipoInstalacion, String sitMetodoServicio, String sitMetodoEvacuacion, String sitCombustibleEmpleado, String sitMediosEmpleados, String sitDescripcion, Integer sitEstado) {
        this.servicioSituacionAlbergue = servicioSituacionAlbergue;
        this.sitMetProvision = sitMetProvision;
        this.sitAlmacenamiento = sitAlmacenamiento;
-       this.sitProveedorServicio = sitProveedorServicio;
        this.sitAguaBebible = sitAguaBebible;
        this.sitAlcanceServicio = sitAlcanceServicio;
        this.sitServicioLavanderias = sitServicioLavanderias;
@@ -112,13 +112,7 @@ public class AlbSituacion  implements java.io.Serializable {
     public void setSitAlmacenamiento(String sitAlmacenamiento) {
         this.sitAlmacenamiento = sitAlmacenamiento;
     }
-    public String getSitProveedorServicio() {
-        return this.sitProveedorServicio;
-    }
-    
-    public void setSitProveedorServicio(String sitProveedorServicio) {
-        this.sitProveedorServicio = sitProveedorServicio;
-    }
+ 
     public String getSitAguaBebible() {
         return this.sitAguaBebible;
     }
@@ -316,8 +310,21 @@ public class AlbSituacion  implements java.io.Serializable {
         this.sitEstado = sitEstado;
     }
 
+    public String getSitMetProvisionInternet() {
+        return sitMetProvisionInternet;
+    }
 
+    public void setSitMetProvisionInternet(String sitMetProvisionInternet) {
+        this.sitMetProvisionInternet = sitMetProvisionInternet;
+    }
 
+    public String getSitAlcanceInternet() {
+        return sitAlcanceInternet;
+    }
+
+    public void setSitAlcanceInternet(String sitAlcanceInternet) {
+        this.sitAlcanceInternet = sitAlcanceInternet;
+    }
 
 }
 

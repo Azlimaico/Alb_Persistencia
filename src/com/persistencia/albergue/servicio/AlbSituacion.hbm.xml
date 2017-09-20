@@ -13,17 +13,20 @@
     <property name="sitMetProvision" type="string">
       <column length="100" name="SIT_MET_PROVISION"/>
     </property>
+    <property name="sitMetProvisionInternet" type="string">
+      <column length="100" name="SIT_MET_PROVISION_INTERNET"/>
+    </property>
     <property name="sitAlmacenamiento" type="string">
       <column length="100" name="SIT_ALMACENAMIENTO"/>
-    </property>
-    <property name="sitProveedorServicio" type="string">
-      <column length="100" name="SIT_PROVEEDOR_SERVICIO"/>
     </property>
     <property name="sitAguaBebible" type="string">
       <column length="100" name="SIT_AGUA_BEBIBLE"/>
     </property>
     <property name="sitAlcanceServicio" type="string">
       <column length="100" name="SIT_ALCANCE_SERVICIO"/>
+    </property>
+    <property name="sitAlcanceInternet" type="string">
+      <column length="100" name="SIT_ALCANCE_INTERNET"/>
     </property>
     <property name="sitServicioLavanderias" type="string">
       <column length="100" name="SIT_SERVICIO_LAVANDERIAS"/>
