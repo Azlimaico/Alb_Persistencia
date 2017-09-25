@@ -18,8 +18,9 @@ public class AlbServicio  implements java.io.Serializable {
     public AlbServicio() {
     }
 
-    public AlbServicio(String serNombre, Integer serEstado, Set servicioSituacionAlbergues) {
-       this.serNombre = serNombre;
+    public AlbServicio(AlbEmpresa albEmpresa, String serNombre, Integer serEstado, Set servicioSituacionAlbergues) {
+        this.albEmpresa= albEmpresa;
+        this.serNombre = serNombre;
        this.serEstado = serEstado;
        this.servicioSituacionAlbergues = servicioSituacionAlbergues;
     }
