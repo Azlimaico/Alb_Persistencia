@@ -14,7 +14,7 @@
             <column name="PAR_ESTADO"/>
         </property>
     
-        <many-to-one class="com.persistencia.general.sistema.AlbCanton" fetch="select" name="albCanton">
+        <many-to-one class="com.persistencia.general.sistema.AlbCanton"   fetch="select" name="albCanton">
             <column name="CAN_ID"/>
         </many-to-one>
         

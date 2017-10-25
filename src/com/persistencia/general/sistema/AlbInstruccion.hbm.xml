@@ -7,7 +7,7 @@
       <column name="INS_ID"/>
       <generator class="identity"/>
     </id>
-    <property name="insNombre" type="string">
+    <property name="insNombre" type="string" unique="true">
       <column length="100" name="INS_NOMBRE"/>
     </property>
     <property name="insEstado" type="java.lang.Integer">

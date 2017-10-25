@@ -7,7 +7,7 @@
       <column name="RAN_ID"/>
       <generator class="identity"/>
     </id>
-    <property name="ranRango" type="string">
+    <property name="ranRango" type="string" unique="true">
       <column length="100" name="RAN_RANGO"/>
     </property>
     <property name="ranEstado" type="java.lang.Integer">

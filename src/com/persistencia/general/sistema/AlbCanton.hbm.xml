@@ -8,7 +8,7 @@
             <column name="CAN_ID" />
             <generator class="identity" />
         </id>
-        <property name="canNombre" type="string">
+        <property name="canNombre" type="string" unique="true">
             <column name="CAN_NOMBRE" length="100" />
         </property>
         <property name="canEstado" type="java.lang.Integer">
