@@ -10,7 +10,7 @@
     <many-to-one class="com.persistencia.general.sistema.AlbTipoEmpresa" fetch="select" name="albTipoEmpresa">
       <column name="TIE_ID"/>
     </many-to-one>
-    <property name="empNombre" type="string">
+    <property name="empNombre" type="string" unique="true">
       <column length="100" name="EMP_NOMBRE"/>
     </property>
     <property name="empEstado" type="java.lang.Integer">
