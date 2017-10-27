@@ -8,7 +8,7 @@
             <column name="AVA_ID" />
             <generator class="identity" />
         </id>
-        <property name="avaNombre" type="string">
+        <property name="avaNombre" type="string" unique="true">
             <column name="AVA_NOMBRE" length="100" />
         </property>
         <property name="avaEstado" type="java.lang.Integer">
