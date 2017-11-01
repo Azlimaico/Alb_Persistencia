@@ -7,11 +7,8 @@
       <column name="PER_ID"/>
       <generator class="identity"/>
     </id>
-    <property name="perNombre" type="string">
+    <property name="perNombre" type="string" unique="true">
       <column length="100" name="PER_NOMBRE"/>
-    </property>
-    <property name="peaId" type="java.lang.Long">
-      <column name="PEA_ID"/>
     </property>
     <property name="perEstado" type="java.lang.Integer">
       <column name="PER_ESTADO"/>

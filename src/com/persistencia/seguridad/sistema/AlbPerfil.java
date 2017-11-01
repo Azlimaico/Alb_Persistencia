@@ -13,16 +13,14 @@ public class AlbPerfil  implements java.io.Serializable {
 
      private Long perId;
      private String perNombre;
-     private Long peaId;
      private Integer perEstado;
      private Set pantallaPerfils = new HashSet(0);
 
     public AlbPerfil() {
     }
 
-    public AlbPerfil(String perNombre, Long peaId, Integer perEstado, Set pantallaPerfils) {
+    public AlbPerfil(String perNombre, Integer perEstado, Set pantallaPerfils) {
        this.perNombre = perNombre;
-       this.peaId = peaId;
        this.perEstado = perEstado;
        this.pantallaPerfils = pantallaPerfils;
     }
@@ -41,13 +39,7 @@ public class AlbPerfil  implements java.io.Serializable {
     public void setPerNombre(String perNombre) {
         this.perNombre = perNombre;
     }
-    public Long getPeaId() {
-        return this.peaId;
-    }
     
-    public void setPeaId(Long peaId) {
-        this.peaId = peaId;
-    }
     public Integer getPerEstado() {
         return this.perEstado;
     }

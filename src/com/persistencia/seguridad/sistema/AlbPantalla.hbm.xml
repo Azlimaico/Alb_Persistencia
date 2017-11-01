@@ -10,8 +10,8 @@
     <many-to-one class="com.persistencia.seguridad.sistema.AlbMenu" fetch="select" name="albMenu">
       <column name="MEN_ID"/>
     </many-to-one>
-    <property name="panNombrePantallas" type="java.lang.Integer">
-      <column name="PAN_NOMBRE_PANTALLAS"/>
+    <property name="panNombrePantallas" type="string" unique="true">
+      <column length="100" name="PAN_NOMBRE_PANTALLAS"/>
     </property>
     <property name="panEstado" type="java.lang.Integer">
       <column name="PAN_ESTADO"/>

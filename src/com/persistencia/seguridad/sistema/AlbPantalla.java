@@ -13,14 +13,14 @@ public class AlbPantalla  implements java.io.Serializable {
 
      private Long panId;
      private AlbMenu albMenu;
-     private Integer panNombrePantallas;
+     private String panNombrePantallas;
      private Integer panEstado;
-     private Set pantallaPerfils = new HashSet(0);
-
+     private Set<AlbPerfil> pantallaPerfils = new HashSet<AlbPerfil>();
+     
     public AlbPantalla() {
     }
 
-    public AlbPantalla(AlbMenu albMenu, Integer panNombrePantallas, Integer panEstado, Set pantallaPerfils) {
+    public AlbPantalla(AlbMenu albMenu, String panNombrePantallas, Integer panEstado, Set pantallaPerfils) {
        this.albMenu = albMenu;
        this.panNombrePantallas = panNombrePantallas;
        this.panEstado = panEstado;
@@ -41,11 +41,11 @@ public class AlbPantalla  implements java.io.Serializable {
     public void setAlbMenu(AlbMenu albMenu) {
         this.albMenu = albMenu;
     }
-    public Integer getPanNombrePantallas() {
+    public String getPanNombrePantallas() {
         return this.panNombrePantallas;
     }
     
-    public void setPanNombrePantallas(Integer panNombrePantallas) {
+    public void setPanNombrePantallas(String panNombrePantallas) {
         this.panNombrePantallas = panNombrePantallas;
     }
     public Integer getPanEstado() {
