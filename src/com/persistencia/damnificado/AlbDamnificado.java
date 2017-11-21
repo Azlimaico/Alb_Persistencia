@@ -225,7 +225,7 @@ public class AlbDamnificado  implements java.io.Serializable {
     public void setDamnificadoDiscapacidads(Set damnificadoDiscapacidads) {
         this.damnificadoDiscapacidads = damnificadoDiscapacidads;
     }
- public void addAlbergue(AlbAlbergue albergue) {
+    public void addAlbergue(AlbAlbergue albergue) {
         this.damnificadoAlbergues.add(albergue);
     }
 

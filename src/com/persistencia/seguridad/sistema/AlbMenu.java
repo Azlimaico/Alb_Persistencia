@@ -19,6 +19,11 @@ public class AlbMenu  implements java.io.Serializable {
     public AlbMenu() {
     }
 
+    public AlbMenu(String menNombre, Integer menEstado) {
+       this.menNombre = menNombre;
+       this.menEstado = menEstado;
+    }
+    
     public AlbMenu(String menNombre, Integer menEstado, Set albPantallas) {
        this.menNombre = menNombre;
        this.menEstado = menEstado;
@@ -49,12 +54,12 @@ public class AlbMenu  implements java.io.Serializable {
     public Set getAlbPantallas() {
         return this.albPantallas;
     }
-    
+
     public void setAlbPantallas(Set albPantallas) {
         this.albPantallas = albPantallas;
     }
 
-
+   
 
 
 }

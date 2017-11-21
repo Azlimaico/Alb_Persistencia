@@ -2,20 +2,16 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class name="com.persistencia.seguridad.sistema.PantallaPerfil" optimistic-lock="version" table="pantalla_perfil">
-    <composite-id class="com.persistencia.seguridad.sistema.PantallaPerfilId" name="id">
-      <key-property name="perId" type="java.lang.Long">
-        <column name="PER_ID"/>
-      </key-property>
-      <key-property name="panId" type="java.lang.Long">
-        <column name="PAN_ID"/>
-      </key-property>
-    </composite-id>
-    <many-to-one class="com.persistencia.seguridad.sistema.AlbPantalla" fetch="select" insert="false" name="albPantalla" update="false">
-      <column name="PAN_ID"/>
-    </many-to-one>
-    <many-to-one class="com.persistencia.seguridad.sistema.AlbPerfil" fetch="select" insert="false" name="albPerfil" update="false">
-      <column name="PER_ID"/>
-    </many-to-one>
-  </class>
+    <class name="com.persistencia.seguridad.sistema.PantallaPerfil" optimistic-lock="version" table="pantalla_perfil">
+        <id name="PantallaPerfilId" type="java.lang.Long">
+            <column name="PANTALLAPERFIL_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="albPantalla" class="com.persistencia.seguridad.sistema.AlbPantalla" fetch="select">
+            <column name="PAN_ID"/>
+        </many-to-one>
+        <many-to-one  name="albPerfil" class="com.persistencia.seguridad.sistema.AlbPerfil" fetch="select">
+            <column name="PER_ID"/>
+        </many-to-one>
+    </class>
 </hibernate-mapping>

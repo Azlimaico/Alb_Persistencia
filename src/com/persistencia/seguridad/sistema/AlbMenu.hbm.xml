@@ -2,22 +2,25 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class name="com.persistencia.seguridad.sistema.AlbMenu" optimistic-lock="version" table="alb_menu">
-    <id name="menId" type="java.lang.Long">
-      <column name="MEN_ID"/>
-      <generator class="identity"/>
-    </id>
-    <property name="menNombre" type="string" unique="true">
-      <column length="100" name="MEN_NOMBRE"/>
-    </property>
-    <property name="menEstado" type="java.lang.Integer">
-      <column name="MEN_ESTADO"/>
-    </property>
-    <set fetch="select" inverse="true" lazy="true" name="albPantallas" table="alb_pantalla">
-      <key>
-        <column name="MEN_ID"/>
-      </key>
-      <one-to-many class="com.persistencia.seguridad.sistema.AlbPantalla"/>
-    </set>
-  </class>
+    <class name="com.persistencia.seguridad.sistema.AlbMenu" optimistic-lock="version" table="alb_menu">
+        <id name="menId" type="java.lang.Long">
+            <column name="MEN_ID"/>
+            <generator class="identity"/>
+        </id>
+        <property name="menNombre" type="string" unique="true">
+            <column length="100" name="MEN_NOMBRE"/>
+        </property>
+        <property name="menEstado" type="java.lang.Integer">
+            <column name="MEN_ESTADO"/>
+        </property>
+        <set name="albPantallas" table="alb_pantalla" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="MEN_ID" />
+            </key>
+            <one-to-many class="com.persistencia.seguridad.sistema.AlbPantalla" />
+        </set>
+        
+          
+    
+    </class>
 </hibernate-mapping>

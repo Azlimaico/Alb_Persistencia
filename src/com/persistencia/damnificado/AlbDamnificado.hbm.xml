@@ -28,7 +28,7 @@
     <property name="damApellidos" type="string">
       <column length="100" name="DAM_APELLIDOS"/>
     </property>
-    <property name="damCedula" type="java.lang.Integer">
+    <property name="damCedula" type="java.lang.Integer" unique="true">
       <column name="DAM_CEDULA"/>
     </property>
     <property name="damSexo" type="java.lang.Integer">
@@ -76,5 +76,6 @@
       </key>
       <one-to-many class="com.persistencia.general.sistema.DamnificadoDiscapacidad"/>
     </set>
+    
   </class>
 </hibernate-mapping>

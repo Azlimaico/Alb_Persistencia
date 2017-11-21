@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/11/2017 7:52:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.persistencia.seguridad.sistema.PerAdministrativoAlberguePerfil" table="per_administrativo_albergue_perfil" optimistic-lock="version">
+        <id name="padId" type="java.lang.Long">
+            <column name="PAD_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one class="com.persistencia.albergue.AlbAlbergue" fetch="select" name="albAlbergue">
+            <column name="ALB_ID"/>
+        </many-to-one>
+        <many-to-one class="com.persistencia.seguridad.sistema.AlbPersonalAdministrativo" fetch="select" name="albPersonalAdministrativo">
+            <column name="PEA_ID"/>
+        </many-to-one>
+        <many-to-one class="com.persistencia.seguridad.sistema.AlbPerfil" fetch="select" name="albPerfil">
+            <column name="PER_ID"/>
+        </many-to-one>
+        <property name="padUsuario" type="string">
+            <column name="PAD_USUARIO" length="20" />
+        </property>
+        <property name="padContrasenia" type="string">
+            <column name="PAD_CONTRASENIA" length="20" />
+        </property>
+        <property name="padEstado" type="java.lang.Integer">
+            <column name="PAD_ESTADO" />
+        </property>
+    </class>
+</hibernate-mapping>

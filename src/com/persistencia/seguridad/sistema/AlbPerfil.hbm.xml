@@ -2,22 +2,23 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class name="com.persistencia.seguridad.sistema.AlbPerfil" optimistic-lock="version" table="alb_perfil">
-    <id name="perId" type="java.lang.Long">
-      <column name="PER_ID"/>
-      <generator class="identity"/>
-    </id>
-    <property name="perNombre" type="string" unique="true">
-      <column length="100" name="PER_NOMBRE"/>
-    </property>
-    <property name="perEstado" type="java.lang.Integer">
-      <column name="PER_ESTADO"/>
-    </property>
-    <set fetch="select" inverse="true" lazy="true" name="pantallaPerfils" table="pantalla_perfil">
-      <key>
-        <column name="PER_ID"/>
-      </key>
-      <one-to-many class="com.persistencia.seguridad.sistema.PantallaPerfil"/>
-    </set>
-  </class>
+    <class name="com.persistencia.seguridad.sistema.AlbPerfil" optimistic-lock="version" table="alb_perfil">
+        <id name="perId" type="java.lang.Long">
+            <column name="PER_ID"/>
+            <generator class="identity"/>
+        </id>
+        <property name="perNombre" type="string" unique="true">
+            <column length="100" name="PER_NOMBRE"/>
+        </property>
+        <property name="perEstado" type="java.lang.Integer">
+            <column name="PER_ESTADO"/>
+        </property>
+        <set name="pantallaPerfils" table="pantalla_perfil" fetch="select" inverse="true" lazy="true" >
+            <key>
+                <column name="PER_ID"  />
+            </key>
+            <one-to-many class="com.persistencia.seguridad.sistema.PantallaPerfil" />
+        </set>
+        
+    </class>
 </hibernate-mapping>

@@ -42,8 +42,7 @@
         </property>
         <property name="albEstado" type="int">
             <column length="2" name="ALB_ESTADO"/>
-        </property>
-          
+        </property>          
         
         <set fetch="select" inverse="false" lazy="true" name="damnificadoAlbergues" table="damnificado_albergue" cascade="all">
             <key column="ALB_ID"/>

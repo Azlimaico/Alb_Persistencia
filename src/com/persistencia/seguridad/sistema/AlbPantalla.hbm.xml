@@ -2,25 +2,32 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 03/06/2017 12:49:20 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class name="com.persistencia.seguridad.sistema.AlbPantalla" optimistic-lock="version" table="alb_pantalla">
-    <id name="panId" type="java.lang.Long">
-      <column name="PAN_ID"/>
-      <generator class="identity"/>
-    </id>
-    <many-to-one class="com.persistencia.seguridad.sistema.AlbMenu" fetch="select" name="albMenu">
-      <column name="MEN_ID"/>
-    </many-to-one>
-    <property name="panNombrePantallas" type="string" unique="true">
-      <column length="100" name="PAN_NOMBRE_PANTALLAS"/>
-    </property>
-    <property name="panEstado" type="java.lang.Integer">
-      <column name="PAN_ESTADO"/>
-    </property>
-    <set fetch="select" inverse="true" lazy="true" name="pantallaPerfils" table="pantalla_perfil">
-      <key>
-        <column name="PAN_ID"/>
-      </key>
-      <one-to-many class="com.persistencia.seguridad.sistema.PantallaPerfil"/>
-    </set>
-  </class>
+    <class name="com.persistencia.seguridad.sistema.AlbPantalla" optimistic-lock="version" table="alb_pantalla">
+        <id name="panId" type="java.lang.Long">
+            <column name="PAN_ID"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.persistencia.seguridad.sistema.AlbMenu" fetch="select" name="albMenu">
+            <column name="MEN_ID"/>
+        </many-to-one>
+        <property name="panNombrePantallas" type="string" unique="true" >
+            <column length="100" name="PAN_NOMBRE_PANTALLAS"/>
+        </property>
+        <property name="panUrl" type="string">
+            <column name="PAN_URL" length="100">
+            </column>
+        </property>
+        <property name="panEstado" type="int">
+            <column name="PAN_ESTADO"/>
+        </property>
+        
+        <set name="pantallaPerfils" table="pantalla_perfil" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PAN_ID" />
+            </key>
+            <one-to-many class="com.persistencia.seguridad.sistema.PantallaPerfil" />
+        </set>
+        
+        
+    </class>
 </hibernate-mapping>
