@@ -19,14 +19,14 @@
         <many-to-one class="com.persistencia.general.sistema.AlbAvanceImplementacion" fetch="select" name="albAvanceImplementacion">
             <column name="AVA_ID"/>
         </many-to-one>
+        <many-to-one class="com.persistencia.general.sistema.AlbTipoAlbergue" fetch="select" name="albTipoAlbergue">
+            <column name="TIA_ID"/>
+        </many-to-one>
         <property name="albNombre" type="string">
             <column length="100" name="ALB_NOMBRE"/>
         </property>
         <property name="albDireccion" type="string">
             <column length="100" name="ALB_DIRECCION"/>
-        </property>
-        <property name="albTipoAlbergue" type="string">
-            <column length="100" name="ALB_TIPO_ALBERGUE"/>
         </property>
         <property name="albArea" type="java.lang.Float">
             <column name="ALB_AREA" precision="12" scale="0"/>

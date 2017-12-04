@@ -7,6 +7,7 @@ import com.persistencia.general.sistema.AlbProvincia;
 import com.persistencia.general.sistema.AlbParroquia;
 import com.persistencia.general.sistema.AlbCanton;
 import com.persistencia.general.sistema.AlbAvanceImplementacion;
+import com.persistencia.general.sistema.AlbTipoAlbergue;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,7 +24,7 @@ public class AlbAlbergue  implements java.io.Serializable {
      private AlbProvincia albProvincia;
      private String albNombre;
      private String albDireccion;
-     private String albTipoAlbergue;
+     private AlbTipoAlbergue albTipoAlbergue;
      private Float albArea;
      private Float albCoordx;
      private Float albCoordy;
@@ -40,7 +41,7 @@ public class AlbAlbergue  implements java.io.Serializable {
     public AlbAlbergue() {
     }
 
-    public AlbAlbergue(AlbAvanceImplementacion albAvanceImplementacion, AlbCanton albCanton, AlbParroquia albParroquia, AlbProvincia albProvincia, String albNombre, String albDireccion, String albTipoAlbergue, Float albArea, Float albCoordx, Float albCoordy, String albObservaciones,int albEstado , Set albCarpas, Set albVehiculos, Set partediarioAlbergues, Set damnificadoAlbergues, Set servicioSituacionAlbergues) {
+    public AlbAlbergue(AlbAvanceImplementacion albAvanceImplementacion, AlbCanton albCanton, AlbParroquia albParroquia, AlbProvincia albProvincia, String albNombre, String albDireccion, AlbTipoAlbergue albTipoAlbergue, Float albArea, Float albCoordx, Float albCoordy, String albObservaciones,int albEstado , Set albCarpas, Set albVehiculos, Set partediarioAlbergues, Set damnificadoAlbergues, Set servicioSituacionAlbergues) {
        this.albAvanceImplementacion = albAvanceImplementacion;
        this.albCanton = albCanton;
        this.albParroquia = albParroquia;
@@ -109,13 +110,15 @@ public class AlbAlbergue  implements java.io.Serializable {
     public void setAlbDireccion(String albDireccion) {
         this.albDireccion = albDireccion;
     }
-    public String getAlbTipoAlbergue() {
-        return this.albTipoAlbergue;
+
+    public AlbTipoAlbergue getAlbTipoAlbergue() {
+        return albTipoAlbergue;
     }
-    
-    public void setAlbTipoAlbergue(String albTipoAlbergue) {
+
+    public void setAlbTipoAlbergue(AlbTipoAlbergue albTipoAlbergue) {
         this.albTipoAlbergue = albTipoAlbergue;
     }
+    
     public Float getAlbArea() {
         return this.albArea;
     }
